@@ -1,0 +1,3 @@
+[submodule "ab-dev/ab-libs-network"]
+	path = ab-dev/ab-libs-network
+	url = https://github.com/sftd/ab-libs-network.git

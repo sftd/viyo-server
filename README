@@ -1,0 +1,14 @@
+Viyo Server
+-----------
+
+NodeJS server used as a 'relay' for Viyo project.
+
+
+How it works
+============
+
+There are 3 types of clients:
+
+### Sensor
+
+Sensor is

@@ -1,0 +1,8 @@
+{
+    "repositories": {
+        "ab-libs-network": {
+            "dir": "3rdparty/ab-libs-network",
+            "link": "https://github.com/sftd/ab-libs-network.git"
+        }
+    }
+}

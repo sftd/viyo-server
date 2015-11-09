@@ -1,0 +1,8 @@
+{
+  "name": "viyo-server",
+  "version": "0.0.1",
+  "description": "NodeJS server used as a `relay` for Viyo project.",
+  "author": "AllBlue Monkey <monkey@allblue.pl>",
+  "license": "MIT",
+  "dependencies": {}
+}
