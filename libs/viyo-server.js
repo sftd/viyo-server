@@ -3,8 +3,8 @@
 
 /* External */
 // var Log = require('ab-libs-logs/libs.js').Log;
-var ABClient = require('ab-libs-network/libs.js').ABClient;
-var ABServer = require('ab-libs-network/libs.js').ABServer;
+var ABClient = require('../ab-dev/ab-libs-network/libs.js').ABClient;
+var ABServer = require('../ab-dev/ab-libs-network/libs.js').ABServer;
 /* Internal */
 var ViyoController = require('./viyo-controller.js').ViyoController;
 var ViyoElement = require('./viyo-element.js').ViyoElement;
