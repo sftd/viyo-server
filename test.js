@@ -117,7 +117,6 @@ controller.setOnDataReceivedListener(function(data) {
         }
 
         /* `testSensor0` triggered. */
-        console.log(message);
         if (sensor.name === 'testSensor0') {
             var message = {
                 type: 'dataToPlayer',
@@ -188,16 +187,3 @@ var trigger_sensor_1 = function() {
     setTimeout(trigger_sensor_1, 1000);
 }
 setTimeout(trigger_sensor_1, 1000);
-
-// var trigger_sensor_2 = function() {
-//     if (!sensors_connected[0]) {
-//         setTimeout(trigger_sensor_2, 1000);
-//     } else {
-//         sensors[1].send(JSON.stringify({
-//             'dataFromSensor': {
-//                 'trigger': true
-//             }
-//         }));
-//     }
-// }
-// setTimeout(trigger_sensor_1, 10000);

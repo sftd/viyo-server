@@ -4,5 +4,6 @@
   "description": "NodeJS server used as a `relay` for Viyo project.",
   "author": "AllBlue Monkey <monkey@allblue.pl>",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {}
 }
