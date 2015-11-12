@@ -1,6 +1,9 @@
 
 'use strict';
 
+process.env.NODE_PATH = __dirname + '/ab-dev';
+require('module').Module._initPaths();
+
 var fs = require('fs');
 var http = require('http');
 

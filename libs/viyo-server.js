@@ -3,8 +3,8 @@
 
 /* External */
 // var Log = require('ab-libs-logs/libs.js').Log;
-var ABClient = require('../ab-dev/ab-libs-network/libs.js').ABClient;
-var ABServer = require('../ab-dev/ab-libs-network/libs.js').ABServer;
+var ABClient = require('ab-libs-network/libs.js').ABClient;
+var ABServer = require('ab-libs-network/libs.js').ABServer;
 /* Internal */
 var ViyoController = require('./viyo-controller.js').ViyoController;
 var ViyoElement = require('./viyo-element.js').ViyoElement;
@@ -91,15 +91,12 @@ var ViyoServer = {
             return;
         }
 
-        if (!(ab_client.id in self.abClients)) {
-            if (message.type === 'authentication') {
-                self.onDataReceived_Authentication(ab_client, message);
-                return;
-            }
+        if (message.type === 'authentication') {
+            self.onDataReceived_Authentication(ab_client, message);
+            return;
+        }
 
-            console.log('Unknown message type from unauthenticated client:');
-            console.log(message);
-        } else {
+        if (ab_client.id in self.abClients) {
             if (message.type === 'dataFromSensor') {
                 self.onDataReceived_DataFromSensor(ab_client, message);
                 return;
@@ -112,7 +109,12 @@ var ViyoServer = {
 
             console.log('Unknown message type from authenticated client:');
             console.log(message);
+
+            return;
         }
+
+        console.log('Unknown message type from unauthenticated client:');
+        console.log(message);
     },
 
     /* Helpers */
@@ -239,8 +241,6 @@ var ViyoServer = {
                         data: message.data.data
                     }
                 };
-
-                console.log(sensor_message);
 
                 self.controllers[c_name].element.abClient.send(
                         JSON.stringify(sensor_message));
